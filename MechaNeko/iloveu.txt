@@ -1,0 +1,17 @@
+.data 
+
+input: .asciiz "hello"
+.space 8
+output: .asciiz ""
+
+.code 
+
+daddiu r1,r0,1
+daddi r2, r0, output
+
+
+loop:
+lb r4, input(r3)
+sb r4, output(r3)
+dadd r3, r3, r1
+bne r3,r2, loop
